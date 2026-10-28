@@ -1,10 +1,11 @@
 import { Outlet } from "react-router";
+import { Nav } from "../components/Nav";
 
 const RootLayout = () => {
   return (
     <div>
         <header>
-            <nav />
+            <Nav />
         </header>
 
         <main>
