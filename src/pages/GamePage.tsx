@@ -39,7 +39,7 @@ const GamePage = () => {
     return <p>{message}</p>
   }
 
-  if (!games.length) { // If no games are found, display a message
+  if (!games.length) { // If no games are found
     return <p>No games found.</p>
   }
 

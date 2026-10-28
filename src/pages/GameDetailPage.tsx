@@ -32,14 +32,16 @@ const GameDetailPage = () => {
         fetchGameDetails()
     }, [id])
 
-    const deleteGame = async () => {
-        const response = await fetch(`${API_URL}/games/${id}`, {
-            method: 'DELETE'
-        })
-        if (response.ok) {
-            navigate('/games') // Navigate back to the gamepage if it was successful
-        } else {
+   const deleteGame = async () => {
+        try {
+            const response = await fetch(`${API_URL}/games/${id}`, { method: 'DELETE' })
+            if (response.ok) {
+            navigate('/games')
+            } else {
             setMessage('Could not delete the game.')
+            }
+        } catch {
+        setMessage('Could not reach the API. Is it running?')
         }
     }
 
@@ -48,13 +50,17 @@ const GameDetailPage = () => {
     }
 
     if (message) { // If there's an error message, display it
-        return <p>{message}</p>
+        return (
+        <section>
+            <p>{message}</p>
+            <Link to="/games">Back to all Games</Link>
+        </section>
+        ) // borde de va så
     }
 
-    if (!game) { // If no game is found, display a loading message
+    if (!game) { // If no game is found
         return <p>Game not found.</p>
     }
-
 
     return (
      <section>
