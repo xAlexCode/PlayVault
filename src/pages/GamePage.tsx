@@ -10,6 +10,7 @@ const GamePage = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    console.log('Fetching games...') //Check to avoid loop, get 2 per time
     fetch(`${API_URL}/games`)
     .then((response) => {
       if (!response.ok) throw new Error('Bad response')
