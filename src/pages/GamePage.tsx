@@ -9,17 +9,38 @@ const GamePage = () => {
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    console.log('Fetching games...') //Check to avoid loop, get 2 per time
-    fetch(`${API_URL}/games`)
-    .then((response) => {
-      if (!response.ok) throw new Error('Bad response')
-      return response.json()
-      })
-    .then((data: Game[]) => setGames(data))
-    .catch(() => setMessage('Could not fetch games. Is the API running?'))
-    .finally(() => setLoading(false))
+  useEffect(() => { 
+    const fetchGames = async () => {
+      console.log('Fetching games...')
+      try {
+        const response = await fetch(`${API_URL}/games`)
+        const data = await response.json()
+
+        if (!response.ok) {
+          setMessage(data.message)
+          return
+        }
+        setGames(data)
+      } catch {
+        setMessage('Could not reach the API. Is it running?')
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchGames()
   }, [])
+
+  if (loading) { // If the games are still loading, display a loading message
+    return <p>Loading games...</p>
+  }
+
+  if (message) { // If there's an error message, display it
+    return <p>{message}</p>
+  }
+
+  if (!games.length) { // If no games are found, display a message
+    return <p>No games found.</p>
+  }
 
   return (
     <section>
@@ -32,6 +53,7 @@ const GamePage = () => {
                 <h2>{game.title}</h2>
                 <p>{game.notes}</p>
                 <img src={game.coverUrl} alt={game.title} />
+                <Link to={`/games/${game.id}`}>View Game</Link>
             </div>
         ))}
         <Link to="/games/new">Add New Game</Link>
