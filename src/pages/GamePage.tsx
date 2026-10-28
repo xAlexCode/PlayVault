@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import {API_URL} from '../../config'
 import type { Game } from '../types'
 import { Link } from 'react-router'
+import GameCard from '../components/GameCard'
 
 
 const GamePage = () => {
@@ -49,12 +50,10 @@ const GamePage = () => {
         {message && <p>{message}</p>}
         <p>This is the gamepage for your games.</p>
         {games.map((game) => (
-            <div key={game.id}>
-                <h2>{game.title}</h2>
-                <p>{game.notes}</p>
-                <img src={game.coverUrl} alt={game.title} />
-                <Link to={`/games/${game.id}`}>View Game</Link>
-            </div>
+            <GameCard 
+                key={game.id} 
+                game={game} 
+            />
         ))}
         <Link to="/games/new">Add New Game</Link>
     </section>
