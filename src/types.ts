@@ -8,7 +8,6 @@ export type Game = {
     notes: string
 }
 
-
 export type Status = 'want' | 'playing' | 'completed' | 'dropped'
 
 export type NewGame = {
