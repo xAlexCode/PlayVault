@@ -59,7 +59,12 @@ const GameDetailPage = () => {
     }
 
     if (!game) { // If no game is found
-        return <p>Game not found.</p>
+        return (
+            <section>
+                <Link to="/games">Back to all games</Link>
+                <p>Game not found</p>
+            </section>
+        )
     }
 
     return (
