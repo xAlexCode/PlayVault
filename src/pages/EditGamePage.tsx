@@ -70,6 +70,7 @@ const EditGamePage = () => {
    <section>
         <h1>Edit game</h1>
         {message && <p role="alert">{message}</p>}
+        <Link to={`/games/${game.id}`}>Back to game</Link>
         {/* initialValues fills the form fields with the game's current data. onSubmit calls updateGame when the form is submitted */}
         <GameForm initialValues={game} onSubmit={updateGame} />
     </section>

@@ -77,9 +77,7 @@ const GameDetailPage = () => {
             <p>Notes: {game.notes}</p>
             <Link to={`/games/${game.id}/edit`}>Edit</Link>{' '}
             <button onClick={deleteGame}>Delete</button>
-            <p>
-                <button onClick={() => navigate(-1)}>Go back</button> 
-            </p>
+           <Link to="/games">Back to all games</Link>
         </section>
     )
 }
