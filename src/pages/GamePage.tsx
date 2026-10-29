@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react'
 import {API_URL} from '../../config'
-import type { Game } from '../types'
-import { Link } from 'react-router'
+import type { Game, Status } from '../types'
+import { Link, useSearchParams} from 'react-router'
 import GameCard from '../components/GameCard'
+import StatusFilter from '../components/StatusFilter'
 
 
 const GamePage = () => {
   const [games, setGames] = useState<Game[]>([])
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(true)
+  const [searchParams, setSearchParams] = useSearchParams() //useSearchParams is like useState but for URL parameters, where the values adress is (/games?status=playing
+  const status = searchParams.get('status') as Status | null // null, no filter (All)
 
   useEffect(() => { 
     const fetchGames = async () => {
       console.log('Fetching games...')
+      setLoading(true) // show loading when switching filters
+      setMessage('') // clear any previous messages
       try {
-        const response = await fetch(`${API_URL}/games`)
+        const url = status ? `${API_URL}/games?status=${status}` : `${API_URL}/games` //with filter = /games?status=playing, no filter = All games
+        const response = await fetch(url)
         const data = await response.json()
 
         if (!response.ok) {
@@ -29,26 +35,25 @@ const GamePage = () => {
       }
     }
     fetchGames()
-  }, [])
+  }, [status]) // Re-fetch games when the status filter changes
 
-  if (loading) { // If the games are still loading, display a loading message
-    return <p>Loading games...</p>
-  }
-
-  if (message) { // If there's an error message, display it
-    return <p>{message}</p>
-  }
-
-  if (!games.length) { // If no games are found
-    return <p>No games found.</p>
+  const handleFilterChange = (newStatus: Status | null) => { // Runs when a filterbutton is clicked, it changes the adress and when the adress changes the status changes and the list re-renders. 
+    if (newStatus) {
+        setSearchParams({ status: newStatus })
+    } else {
+        setSearchParams({})
+    }
   }
 
   return (
     <section>
         <h1>Games</h1>
+         <StatusFilter status={status} onChange={handleFilterChange} />
         {loading && <p>Loading games...</p>}
         {message && <p>{message}</p>}
+        {!loading && !message && games.length === 0 && <p>No games found...</p>}
         <p>This is the gamepage for your games.</p>
+
         {games.map((game) => (
             <GameCard 
                 key={game.id} 
