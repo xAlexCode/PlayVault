@@ -1,11 +1,15 @@
-import { NavLink } from "react-router"
+import { Link, NavLink } from "react-router"
 
 export const Nav = () => {
   return (
-    <nav>
+    <>
+      <Link to="/">🕹️ PlayVault</Link>
+      <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/games">Games</NavLink>
         <NavLink to="/games/new">New Game</NavLink>
-    </nav>
+      </nav>
+    </>
+ 
   )
 }
