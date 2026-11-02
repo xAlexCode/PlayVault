@@ -223,6 +223,44 @@ button:disabled {
   }
 }
 
+/* ---------- Form ---------- */
+form {
+    margin-top: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+label {
+  display: block;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin: 4px 0 16px;
+  padding: 10px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
 
 /* ---------- Message ---------- */
 [role="alert"] {
