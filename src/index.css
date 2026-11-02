@@ -198,6 +198,32 @@ button:disabled {
   color: var(--muted);
 }
 
+/* ---------- Game detail page ---------- */
+.game-detail {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.game-detail img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .game-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ---------- Message ---------- */
 [role="alert"] {
   background: #3a1d22;

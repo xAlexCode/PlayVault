@@ -68,16 +68,22 @@ const GameDetailPage = () => {
     }
 
     return (
-     <section>
+        <section>
             <h1>{game.title}</h1>
-            <img src={game.coverUrl} alt={game.title} />
-            <p>Platform: {game.platform}</p>
-            <p>Status: {game.status}</p>
-            <p>Rating: {game.rating ?? 'No rating'}</p>
-            <p>Notes: {game.notes}</p>
-            <Link to={`/games/${game.id}/edit`}>Edit</Link>{' '}
-            <button onClick={deleteGame}>Delete</button>
-           <Link to="/games">Back to all games</Link>
+            <div className="game-detail">
+                <img src={game.coverUrl} alt={game.title} />
+                <div>
+                <p>Platform: {game.platform}</p>
+                <p>Status: {game.status}</p>
+                <p>Rating: {game.rating ?? 'No rating'}</p>
+                <p>Notes: {game.notes}</p>
+                </div>
+            </div>
+            <div className="actions">
+                <Link to="/games" className="button">Back to all games</Link>
+                <Link to={`/games/${game.id}/edit`} className="button">Edit</Link>
+                <button className="button-danger" onClick={deleteGame}>Delete</button>
+            </div>
         </section>
     )
 }
