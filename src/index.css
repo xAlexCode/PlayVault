@@ -115,6 +115,34 @@ button:disabled {
   background: #c93a3f;
 }
 
+
+/* ---------- Home ---------- */
+.home {
+  display: flex;
+  align-items: center;    
+  justify-content: center; 
+  text-align: left;         
+  min-height: 80vh;
+  background-image: linear-gradient(to bottom, rgba(11, 17, 32, 0.4), var(--bg)), url('/image/videogame.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-content {
+  max-width: 480px;       
+  padding: 24px;
+}
+
+.home-content p {
+  color: var(--muted);
+  margin: 0 0 24px;         
+}
+
+.home .actions {
+  justify-content: flex-start;
+}
+
 /* ---------- Message ---------- */
 [role="alert"] {
   background: #3a1d22;
