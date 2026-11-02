@@ -1,9 +1,30 @@
 # PlayVault
-A game library for your favorite games
+PlayVault is a game library where users can keep track of games they want to play, are currently playing, have completed, or have dropped.
 
-## React + TypeScript + Vite
+**Users can**:
 
-## Design decisions
+- View all games in a list
+- Open a game's details page 
+- View game ratings and personal notes
+- Add new games
+- Edit existing games
+- Delete games
+- Filter games by status
+
+[Live länk Vercel](http://) 
+
+## technics
+- **React** and **TypeScript** via **Vite**
+- **CSS**: styling
+- **ESLint**: codequality
+- **Git och GitHub**, **Vercel**
+
+## API
+- The API is from the teacher: https://questlog-api.vercel.app/docs
+- The handle for this project is under: https://questlog-api.vercel.app/api/alexandrahsson/games
+
+## Image
+- Photo by [Vicki Hamilton](https://pixabay.com/users/flutie8211-17475707/) from Pixabay
 
 ### Loading and error handling
 
