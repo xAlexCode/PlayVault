@@ -20,7 +20,7 @@ const RootLayout = () => {
                 <Link to="/games">Games</Link>
             </div>
             <span>©PlayVault {new Date().getFullYear()}</span>
-            </footer>
+        </footer>
     </div>
   )
 }

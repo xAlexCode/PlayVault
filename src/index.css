@@ -141,7 +141,7 @@ button:disabled {
   align-items: center;    
   justify-content: center; 
   text-align: left;         
-  min-height: 80vh;
+  min-height: 70vh;
   background-image: linear-gradient(to bottom, rgba(11, 17, 32, 0.4), var(--bg)), url('/image/videogame.png');
   background-size: cover;
   background-position: center;
