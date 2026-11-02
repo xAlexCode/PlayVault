@@ -1,0 +1,25 @@
+/* Created som global variables to avoid repetition */
+:root { 
+  --bg: #0b1120;
+  --surface: #131c33;
+  --border: #243256;
+  --text: #eef2ff;
+  --muted: #94a3c4;
+  --accent: #2a6ad2;
+  --accent-hover: #1c57d8;
+  --danger: #d23e43;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ---------- Message ---------- */
+[role="alert"] {
+  background: #3a1d22;
+  border: 1px solid var(--danger);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+}
