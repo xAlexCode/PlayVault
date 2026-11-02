@@ -7,11 +7,13 @@ type Props = {
 
 const GameCard = ({ game }: Props) => {
     return (
-        <div>
-            <h2>{game.title}</h2>
-            <p>{game.notes}</p>
+        <div className='game-card'>
             <img src={game.coverUrl} alt={game.title} />
-            <Link to={`/games/${game.id}`}>View Game</Link>
+            <div className='game-card-body'>
+                <h2>{game.title}</h2>
+                <p>Status: {game.status}</p>
+                <Link to={`/games/${game.id}`} className='button'>View Game</Link>
+            </div>
         </div>
     )
 }

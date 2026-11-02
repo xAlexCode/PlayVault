@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import {API_URL} from '../../config'
 import type { Game, Status } from '../types'
-import { Link, useSearchParams} from 'react-router'
+import { useSearchParams } from 'react-router'
 import GameCard from '../components/GameCard'
 import StatusFilter from '../components/StatusFilter'
 
@@ -52,15 +52,14 @@ const GamePage = () => {
         {loading && <p>Loading games...</p>}
         {message && <p>{message}</p>}
         {!loading && !message && games.length === 0 && <p>No games found...</p>}
-        <p>This is the gamepage for your games.</p>
-
+        <div className='game-list'>
         {games.map((game) => (
             <GameCard 
                 key={game.id} 
                 game={game} 
             />
         ))}
-        <Link to="/games/new">Add New Game</Link>
+        </div>
     </section>
   )
 }

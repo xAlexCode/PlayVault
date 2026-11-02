@@ -143,6 +143,42 @@ button:disabled {
   justify-content: flex-start;
 }
 
+/* ---------- Gamepage and card ---------- */
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.game-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.game-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.game-card-body {
+  padding: 12px;
+}
+
+.game-card h2 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.game-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
 /* ---------- Message ---------- */
 [role="alert"] {
   background: #3a1d22;
