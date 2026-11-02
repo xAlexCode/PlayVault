@@ -82,6 +82,38 @@ nav a.active {
   color: var(--text);
 }
 
+/* ---------- Buttons (Link and button looks the same) ---------- */
+.button,
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover,
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.button-danger {
+  background: var(--danger);
+}
+
+.button-danger:hover {
+  background: #c93a3f;
+}
 
 /* ---------- Message ---------- */
 [role="alert"] {
