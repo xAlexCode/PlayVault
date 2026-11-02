@@ -52,8 +52,8 @@ const GameDetailPage = () => {
     if (message) { // If there's an error message, display it
         return (
         <section>
+            <Link to="/games" className="button">Back to all Games</Link>
             <p>{message}</p>
-            <Link to="/games">Back to all Games</Link>
         </section>
         ) // borde de va så
     }
@@ -61,7 +61,7 @@ const GameDetailPage = () => {
     if (!game) { // If no game is found
         return (
             <section>
-                <Link to="/games">Back to all games</Link>
+                <Link to="/games" className="button">Back to all games</Link>
                 <p>Game not found</p>
             </section>
         )

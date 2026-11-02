@@ -60,7 +60,7 @@ const EditGamePage = () => {
     if (!game) {
         return (
             <section>
-                <Link to="/games">Back to all games</Link>
+                <Link to="/games" className="button">Back to all games</Link>
                 <p>Game not found</p>
             </section>
         )
