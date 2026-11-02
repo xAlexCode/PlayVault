@@ -17,7 +17,7 @@ const options: { value: Status | null; label: string }[] = [
 export const StatusFilter = ({ status, onChange }: StatusFilterProps) => {
     //console.log('GamePage got new filter:', status)
     return (
-        <div>
+        <div className='status-filter'>
         {options.map((option) => (
             <button
             key={option.value ?? 'all'}

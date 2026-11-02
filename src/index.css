@@ -115,6 +115,25 @@ button:disabled {
   background: #c93a3f;
 }
 
+/* ---------- Filter ---------- */
+.status-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.status-filter button {
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.status-filter button:disabled {
+  background: var(--accent);
+  color: white;
+  opacity: 1;
+}
 
 /* ---------- Home ---------- */
 .home {
