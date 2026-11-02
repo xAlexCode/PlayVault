@@ -23,6 +23,16 @@ PlayVault is a game library where users can keep track of games they want to pla
 - The API is from the teacher: https://questlog-api.vercel.app/docs
 - The handle for this project is under: https://questlog-api.vercel.app/api/alexandrahsson/games
 
+### How it's structured
+| Method  | URL                  | What it does        |
+| ------ | --------------------- | ------------------- |
+| GET    | /games?status=playing | All games or status |
+| GET    | /game/:id             | One game            |
+| POST   | /games/new            | Create a new game   |
+| PATCH  | /games/:id/edit       | Update existing game|
+| DELETE | /api/users/:id        | Delete a game       |
+
+
 ## Image
 - Photo by [Vicki Hamilton](https://pixabay.com/users/flutie8211-17475707/) from Pixabay
 
