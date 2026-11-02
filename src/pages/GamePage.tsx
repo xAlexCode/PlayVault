@@ -15,7 +15,7 @@ const GamePage = () => {
 
   useEffect(() => { 
     const fetchGames = async () => {
-      console.log('Fetching games...')
+      //console.log('Fetching games...')
       setLoading(true) // show loading when switching filters
       setMessage('') // clear any previous messages
       try {

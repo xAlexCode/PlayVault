@@ -9,7 +9,7 @@ const NewGamePage = () => {
     const [message, setMessage] = useState('')
 
     const createGame = async (values: NewGame) => { // GameForm calls this function when pressing save och sends all fields as values
-        console.log(values)
+        //console.log(values)
         setMessage('')
 
         try {

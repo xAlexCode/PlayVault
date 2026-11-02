@@ -12,7 +12,7 @@ const GameDetailPage = () => {
     const [loading, setLoading] = useState(true) // Use while waiting for API response
 
     useEffect(() => {
-      console.log(`Fetching details for game with ID: ${id}`)
+      //console.log(`Fetching details for game with ID: ${id}`)
         const fetchGameDetails = async () => {
             try {
                 const response = await fetch(`${API_URL}/games/${id}`)
