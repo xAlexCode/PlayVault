@@ -15,6 +15,73 @@
   box-sizing: border-box;
 }
 
+.app {
+min-height: 100vh;
+display: flex;
+  flex-direction: column;
+
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  flex: 1;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0 0 16px;
+}
+
+/* ---------- Layout ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+header > a {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a.active {
+  background: var(--surface);
+  color: var(--text);
+}
+
 
 /* ---------- Message ---------- */
 [role="alert"] {
