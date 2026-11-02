@@ -262,6 +262,34 @@ textarea {
   resize: vertical;
 }
 
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 24px;
+
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
 /* ---------- Message ---------- */
 [role="alert"] {
   background: #3a1d22;
