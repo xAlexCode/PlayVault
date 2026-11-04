@@ -1,6 +1,8 @@
 # PlayVault
 PlayVault is a game library where users can keep track of games they want to play, are currently playing, have completed, or have dropped.
 
+My goal grade is **G** for this assignment.
+
 **Users can**:
 
 - View all games in a list
@@ -13,17 +15,27 @@ PlayVault is a game library where users can keep track of games they want to pla
 
 [Live länk Vercel](https://play-vault-five.vercel.app) 
 
-## technics
+## technologies
 - **React** and **TypeScript** via **Vite**
 - **CSS**: styling
 - **ESLint**: codequality
-- **Git och GitHub**, **Vercel**
+- **Git och GitHub**, deployed on **Vercel**
+
+## Getting started
+
+```bash
+git clone [https://github.com/xAlexCode/PlayVault]
+cd playvault
+npm install
+npm run dev
+```
 
 ## API
-- The API is from the teacher: https://questlog-api.vercel.app/docs
-- The handle for this project is under: https://questlog-api.vercel.app/api/alexandrahsson/games
+- The API is provided by the teacher: https://questlog-api.vercel.app/docs
+- There is no login. Games are saved under a personal handle. The handle for this project is **`alexandrahsson`**, so the base URL is: `https://questlog-api.vercel.app/api/alexandrahsson`
+- The handle is set in one place, in `config`, so it can be changed easily.
 
-### How it's structured
+## Endpoints
 | Method  | URL                  | What it does        |
 | ------ | --------------------- | ------------------- |
 | GET    | /games?status=playing | All games or status |
@@ -31,6 +43,17 @@ PlayVault is a game library where users can keep track of games they want to pla
 | POST   | /games/new            | Create a new game   |
 | PATCH  | /games/:id/edit       | Update existing game|
 | DELETE | /api/users/:id        | Delete a game       |
+
+### Pages in the app
+
+| Route              | Page                         |
+| ------------------ | ---------------------------- |
+| /                  | Home                         |
+| /games             | List of games with filter    |
+| /games/:id         | Game details                 |
+| /games/new         | Form to add a game           |
+| /games/:id/edit    | Form to edit a game          |
+| *                  | 404 page                     |
 
 
 ## Image
