@@ -55,7 +55,7 @@ const GameDetailPage = () => {
             <Link to="/games" className="button">Back to all Games</Link>
             <p>{message}</p>
         </section>
-        ) // borde de va så
+        )
     }
 
     if (!game) { // If no game is found
